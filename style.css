@@ -1,0 +1,564 @@
+/* ===========================
+   Moayad Portfolio - Custom Styles
+   Executive Dark Theme with Neon Accents
+   =========================== */
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0f;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+    background: rgba(0, 245, 255, 0.3);
+    color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00f5ff, #0080ff);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00f5ff, #8b5cf6);
+}
+
+/* ===========================
+   Typography
+   =========================== */
+
+.text-gradient {
+    background: linear-gradient(135deg, #00f5ff 0%, #0080ff 50%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===========================
+   Navigation
+   =========================== */
+
+.nav-link {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00f5ff, #0080ff);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00f5ff;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#navbar.scrolled {
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #00f5ff 0%, #0080ff 100%);
+    color: #0a0a0f;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #8b5cf6 0%, #00f5ff 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
+}
+
+.btn-primary span,
+.btn-primary svg {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #00f5ff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 2px solid #00f5ff;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 245, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
+}
+
+.btn-tertiary {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #9ca3af;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(156, 163, 175, 0.3);
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.btn-tertiary:hover {
+    color: #00f5ff;
+    border-color: rgba(0, 245, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typing-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 1.5s infinite;
+}
+
+/* ===========================
+   Service Cards
+   =========================== */
+
+.service-card {
+    background: linear-gradient(135deg, rgba(18, 18, 26, 0.8) 0%, rgba(26, 26, 37, 0.8) 100%);
+    border: 1px solid rgba(37, 37, 50, 0.8);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00f5ff, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 245, 255, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 245, 255, 0.1);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: #00f5ff;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    background: linear-gradient(135deg, #00f5ff 0%, #0080ff 100%);
+    color: #0a0a0f;
+    transform: scale(1.1);
+}
+
+/* Special Service Icons */
+.service-icon.n8n-icon {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 165, 0, 0.15) 100%);
+    color: #ff6b6b;
+}
+
+.service-card:hover .service-icon.n8n-icon {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+    color: #0a0a0f;
+}
+
+.service-icon.security-icon {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(0, 245, 255, 0.15) 100%);
+    color: #10b981;
+}
+
+.service-card:hover .service-icon.security-icon {
+    background: linear-gradient(135deg, #10b981 0%, #00f5ff 100%);
+    color: #0a0a0f;
+}
+
+.service-icon.ai-icon {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(0, 245, 255, 0.15) 100%);
+    color: #8b5cf6;
+}
+
+.service-card:hover .service-icon.ai-icon {
+    background: linear-gradient(135deg, #8b5cf6 0%, #00f5ff 100%);
+    color: #0a0a0f;
+}
+
+/* ===========================
+   Skills Section
+   =========================== */
+
+.skill-category {
+    background: linear-gradient(135deg, rgba(18, 18, 26, 0.6) 0%, rgba(26, 26, 37, 0.6) 100%);
+    border: 1px solid rgba(37, 37, 50, 0.6);
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(37, 37, 50, 0.8);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00f5ff 0%, #0080ff 100%);
+    border-radius: 9999px;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.skill-progress.blue {
+    background: linear-gradient(90deg, #0080ff 0%, #00f5ff 100%);
+}
+
+.skill-progress.purple {
+    background: linear-gradient(90deg, #8b5cf6 0%, #0080ff 100%);
+}
+
+/* ===========================
+   Contact Section
+   =========================== */
+
+.contact-form-container {
+    background: linear-gradient(135deg, rgba(18, 18, 26, 0.8) 0%, rgba(26, 26, 37, 0.8) 100%);
+    border: 1px solid rgba(37, 37, 50, 0.8);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(37, 37, 50, 0.8);
+    border-radius: 0.75rem;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #00f5ff;
+    box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.1);
+}
+
+.form-input::placeholder {
+    color: #6b7280;
+}
+
+/* ===========================
+   Social Links
+   =========================== */
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background: rgba(37, 37, 50, 0.5);
+    border: 1px solid rgba(37, 37, 50, 0.8);
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #00f5ff 0%, #0080ff 100%);
+    border-color: transparent;
+    color: #0a0a0f;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+}
+
+/* WhatsApp Special Style */
+.social-link.whatsapp-link:hover {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
+/* ===========================
+   Three.js Canvas
+   =========================== */
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#canvas-container canvas {
+    display: block;
+}
+
+/* ===========================
+   Responsive Adjustments
+   =========================== */
+
+@media (max-width: 768px) {
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+    }
+    
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* ===========================
+   Glow Effects
+   =========================== */
+
+.glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5),
+                0 0 40px rgba(0, 245, 255, 0.3),
+                0 0 60px rgba(0, 245, 255, 0.1);
+}
+
+.glow-blue {
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.5),
+                0 0 40px rgba(0, 128, 255, 0.3),
+                0 0 60px rgba(0, 128, 255, 0.1);
+}
+
+/* ===========================
+   Loading Animation
+   =========================== */
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0, 245, 255, 0.1);
+    border-top-color: #00f5ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===========================
+   Form Success Message
+   =========================== */
+
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.form-success.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.form-success svg {
+    width: 4rem;
+    height: 4rem;
+    color: #00f5ff;
+    margin-bottom: 1rem;
+}
+
+/* ===========================
+   Particle Effects
+   =========================== */
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00f5ff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 1;
+    }
+}
